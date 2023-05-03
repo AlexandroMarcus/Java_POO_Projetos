@@ -1,0 +1,4 @@
+O polimiorfismo é a sobreescrita dos metodos e atrubutos da superclasse para as subclasses.
+
+@Override
+public void metodo(){}
