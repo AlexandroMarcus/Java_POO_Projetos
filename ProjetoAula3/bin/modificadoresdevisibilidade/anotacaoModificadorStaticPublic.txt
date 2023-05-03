@@ -1,0 +1,14 @@
+									Modificadores de visibilidade
+									
+Modificadores de visibilidade ou de acesso determinam quais atributos e métodos podem ser acessados por
+outras classes.
+
+	static - Quando um atributo ou método é declarado como static, é porque ele está associado a classe
+em vez de uma instância da classe. Isso significa que ele pode ser acessado diretamente usando o nome da
+classe sem a necessidade de se criar uma instância da classe. Por exemplo você pode criar um método 
+static para calcular uma propriedade matemática e todos os objetos da classe podem utilizar esse método.
+Só que para acessar esse método estátic de uma classe main antes é preciso criar um atributo = nomeDaClasse.metodo();
+
+
+
+	

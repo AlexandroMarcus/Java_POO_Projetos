@@ -1,0 +1,12 @@
+									Modificadores de visibilidade
+									
+Modificadores de visibilidade ou de acesso determinam quais atributos e métodos podem ser acessados por
+outras classes.
+
+	public - Quando um atributo ou método é declarado como public, é porque ele pode ser acessado por qualquer classe
+em qualquer pacote.
+
+
+
+
+	
