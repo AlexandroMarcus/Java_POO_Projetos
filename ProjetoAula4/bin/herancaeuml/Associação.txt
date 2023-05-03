@@ -1,0 +1,120 @@
+		Relações entre classes.
+
+		Associacao,
+		Agregação,
+		Composicao,
+		Herânça,
+		Dependência.
+	 
+	
+	Associação é um cenário bastante comum, em que existe um vínculo entre as classes.
+	No exemplo a baixo temos uma associação entre as classes Gerente e Funcionário,
+	em que há um único gerente.Pode ser pertinente nessa relação criar uma classe
+	intermediário caso essa relação precise armazenar informações, por exemplo, seu
+	sistema necessita saber desede que dia tal funcionário passou a ser responsabilidade
+	de determinado gerente.
+	
+	 _______							 ___________
+	|Gerente|	1..1					|Funcionario|
+	|-------|		----------->		|-----------|
+	|-------|				0..*		|-----------|
+	|_______|							|___________|
+										
+										
+	 _______				          _____________						 	 ___________
+	|Gerente|	1..1		         |Gerenciamento|	1..1				|Funcionario|
+	|-------|   ------------>        |Data/início  |      --------->		|-----------|
+	|-------|		      0..*	     |-------------|             1.1   		|-----------|
+	|_______|				         |-------------|						|___________|
+							         |_____________|
+							
+	É possível representar também quantos elementos existem na relação. Chamamos isso de
+	multiplicidade da relação.
+	
+	
+									Multiplicidade da Relação
+	 ______   ____________________________________________________________________________________
+	|Código| |Descrição																			  |
+	|------| |------------------------------------------------------------------------------------|
+	|0..1  | |0 ou 1 objeto, não é obrigatório e no máximo um único objeto da classe na relação.  |
+	|------| |------------------------------------------------------------------------------------|
+	|1..1  | |Apenas 1 objeto, nunca mais ou menos.												  |
+	|------| |------------------------------------------------------------------------------------|
+	|0..*  | |Muitos objetos de zero até um número qualquer de objetos na relação.				  |
+	|------| |------------------------------------------------------------------------------------|
+	|1..*  | |Pelo menos 1, podem existir mais objetos na relação mais o menos 1.				  |
+	|------| |------------------------------------------------------------------------------------|
+	|2..4  | |Na presença de valores específicos a relação está limitada aos valores apresentados.|
+	|______| |____________________________________________________________________________________|
+	
+	
+	Agregação é um tipo especial de associação em que temos uma classe que representa o todo e outra
+	classe que representa a parte. Por exemplo, quando fazemos compras online é comum os produtos 
+	escolhidos irem para um carrinho virtual e, no final da compra, fecharmos o pedido dos itens no
+	carrinho. ao implementar esse sistema poderíamos ter uma classe carrinho(todo) e a classe Produto
+	(parte). Na agregação faz sentido existirem as partes sem o todo. Se a classe carrinho não existisse,
+	a classe produto ainda faria sentido para ser utilizada em outros contextos, para por exemplo,
+	modificar o preço dos itens.
+																	
+	 ____________________										 _____________________
+	|Produto			 |										|Carrinho			  |
+	|--------------------|										|---------------------|
+	|+codigo:int		 |										|-arrayIntes: Produto*|
+	|+descricao:string	 |										|---------------------|
+	|+preco:float		 | ---------------------------------->  |+exibirInfo():void   |
+	|+quantidade: int	 |										|comprar():void       |
+	|____________________|										|_____________________|
+	|listarProduto():void|
+	|____________________| 
+	
+	
+	Composição pode ser entendida como uma variação da agregação, pois também representa uma relação 
+	de todo-parte, no entanto a relação aqui é mais próxima entre o todo e a parte, sendo que a parte 
+	não faz sentido sem o todo, pois o todo cria e destrói as partes. Por exemplo, uma classe que 
+	represente uma empresa (todo) pode ter uma classe chamada Localidade (parte). Na classe Empresa, 
+	as Localidades são criadas, modificadas e destruídas conforme convém e existem apenas para compor 
+	a classe Empresa. Assim, não faz sentido no sistema em questão olhar uma localidade separadamente 
+	da empresa.
+	
+	 _______							 ___________
+	|Empresa|							|Localidade |
+	|-------|		----------->		|-----------|
+	|-------|				1..*		|-----------|
+	|_______|							|___________|
+	
+	
+	A herança é outra relação representada pelo UML e serve para indicar qual é a classe geral e a 
+	classe especializada. É importante observar que os métodos da classe superclasse são acessados 
+	pelas subclasses também. A relação é representada por um triângulo vazio. A imagem do Quadro 5 
+	exemplifica essa relação com a classe Livro e Livro Digital, que temos utilizado como exemplo ao 
+	longo da aula.
+	
+	 ____________________										 __________________________
+	|Livro				 |										|LivroDigital		  	   |
+	|--------------------|										|--------------------------|
+	|+autor:int			 |										|+linkDownload:String 	   |
+	|+custoProducao:float|										|+tamanho:int		  	   |
+	|+precoVenda:float	 | ---------------------------------->  |_________________________ |
+	|+titulo:String		 |										|+tamanhoPorPaginas():float|
+	|+paginas:int		 |										|+imposto()				   |
+	|____________________|										|__________________________|
+	|+lucro()			 |
+	|+imposto()			 |
+	|+imprimirLivro()	 |			 
+	|____________________| 
+	
+	
+	Dependência é outra relação importante que pode ser representada pelo UML. Essa relação indica 
+	simplesmente a dependência para compilar de uma classe pela outra. Por exemplo, uma classe A 
+	utiliza internamente objetos de outra classe B, e para um código assim compilar é necessário 
+	incluir a definição dessa outra classe B no código da primeira classe A. Assim, temos uma relação 
+	em que a classe A depende da classe B. Na Figura 11, temos um exemplo prático de uma classe Cliente
+	que utiliza métodos da classe Fornecedor para realizar alguma tarefa, portanto depende da classe 
+	Fornecedor.
+	
+	|Cliente|	utiliza					|Fornecedor |
+	|-------|		----------->		|-----------|
+	|-------|							|-----------|
+	|_______|							|___________|
+	
+	

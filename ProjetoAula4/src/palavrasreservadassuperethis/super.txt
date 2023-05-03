@@ -1,0 +1,7 @@
+A herança é aplicada apenas para os atributos e os métodos da superclasse. Para herdar os construtores
+de uma superclasse para uma subclasse é necessário utilizar o comando super();
+
+O construtor da classe Testesuper(){} chama o construtor da classe Testethis() usando a palavra-chave 
+"super" para inicializar os atributos herdados.
+
+

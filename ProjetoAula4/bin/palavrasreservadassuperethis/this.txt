@@ -1,0 +1,2 @@
+O comando this serve para diferenciar o atributo de um método para o atributo de uma classe, já que
+ambos possuem o mesmo nome.
