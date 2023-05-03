@@ -1,0 +1,2 @@
+O padrão Singleton consiste em uma classe que é instanciada uma única vez, sempre que ela for chamada através do método Single 
+getInstancia() irá retornar a mesma instância.

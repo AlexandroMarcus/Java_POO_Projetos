@@ -1,0 +1,25 @@
+
+Lançando uma excessão em tempo real:
+
+	throw RuntimeException("Saldo insuficiente");
+
+
+Ao remover a palavra Runtime como no exemplo irá acontecer o seguinte erro:
+
+ex:
+
+	throws Exception("Saldo insuficiente");
+ 
+ 
+		 __________________________________
+		|Unhandled exception type Exception|
+		|__________________________________| 
+		|	1 quick fix available		   |
+		|    							   |
+		|    !add throws declaration	   |
+		|__________________________________|
+
+		
+O intelissense sujere que criemos a declaração throws logo a frente do parâmetro do método. 
+A Exception é um tipo de exceção genérica que deve obrigatoriamente ser tratadas , diferente de uma
+RuntimeException.

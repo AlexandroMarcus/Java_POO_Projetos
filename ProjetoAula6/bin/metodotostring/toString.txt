@@ -1,0 +1,47 @@
+O que é o método toString() ?
+
+Toda classe java é subclasse da classe Object se houver ausência de uma 
+interface ou de uma classe abstrata, e isso também vale para os objetos. 
+A classe Object possui o método toString() que é acessado sempre que desejamos 
+ler um objeto no formato de uma String.
+														 
+Também é possível acessar esse método clicando no botão:
+
+Source >> Generate to String()...
+
+
+Se tentarmos imprimir um objeto da classe Usuário, teríamos uma mensagem como:
+
+	Usuario m1 = new Usuario();
+	System.out.println(m1); 
+ 
+
+ 	
+Console
+> metodostring.Usuario@52cc8049
+
+
+
+Mas ao criarmos o metodo toString() essa mensagem no console seria substituida
+pelo resultado do método.
+
+
+
+Console
+> "Usuario [id=" + id + ", nome=" + nome + ", cpf=" + cpf + "]"
+
+
+
+
+Outra maneira de fazer a impressão do meu objeto e junto com ele os 
+atributos passados por parâmetro do meu construtor, seria acessando os atributos 
+individualmene e concatenando os atributos e as strings. Como no 
+exemplo abaixo:
+
+
+	Usuario usr = new Usuario(1,"Mario","111.222.333-44"));
+	System.out.println(usr.id);
+	System.out.println(usr.nome);
+				
+	...			
+				

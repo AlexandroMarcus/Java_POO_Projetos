@@ -1,0 +1,9 @@
+O método .equals();
+
+Classes e objetos do tipo String não podem ser comparados utilizando o operador relacional ==.
+O método .equals() é um padrão dentro do java e serve justamente para comparar conteúdos, essa
+padronização garante a compatibilidade com certas classes do sistema. A classe usuário é uma
+classe que foi criada para representar um usuário de um sistema, e um método equals que 
+compara ambos.
+
+	System.out.println(v1.equals(v2));
